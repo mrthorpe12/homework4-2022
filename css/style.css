@@ -12,7 +12,7 @@
 
 body {
     font-family: 'Poppins', serif;
-    background: url('../images/concrete_seamless.png');
+    background-image: url('../images/concrete_seamless.png');
     background-color: #f1f1f1;
 }
 
@@ -32,7 +32,7 @@ a:visited {
     color: blue;
 }
 
-.card header {
+.card > header {
     background-color: #288088;
     border: 2px solid #45ADAD;
     padding: 20px 0 20px 0;
@@ -41,7 +41,7 @@ a:visited {
 
 .pricing {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
 }
 
@@ -60,8 +60,9 @@ a:visited {
 
 .gallery {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: row; */
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 #logo {
@@ -71,14 +72,35 @@ a:visited {
 
 @media screen and (min-width: 900px) {
     header {
+        flex-direction: inherit;
         align-items: left;
     }
 
     .nav_links {
-        align-items: right;
+        flex-direction: inherit;
+        justify-items: right;
     }
 
     .card {
         flex-basis: 250px;
+    }
+
+    body header {
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+@media (prefers-reduced-motion) {
+    #logo {
+        animation: none;
+    }
+}
+
+@media print {
+    body {
+        font-family:Arial, Helvetica, sans-serif;
+        background-image: none;
     }
 }
