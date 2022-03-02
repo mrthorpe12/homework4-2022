@@ -41,8 +41,9 @@ a:visited {
 
 .pricing {
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .card {
@@ -60,9 +61,10 @@ a:visited {
 
 .gallery {
     display: flex;
-    /* flex-direction: row; */
-    justify-content: center;
+    flex-direction: row;
     flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 #logo {
@@ -85,6 +87,10 @@ a:visited {
         flex-basis: 250px;
     }
 
+    .pricing {
+        flex-direction: row;
+    }
+
     body header {
         background-attachment: fixed;
         background-repeat: no-repeat;
@@ -98,7 +104,7 @@ a:visited {
     }
 }
 
-@media print {
+@media print and (orientation: portrait) {
     body {
         font-family:Arial, Helvetica, sans-serif;
         background-image: none;
